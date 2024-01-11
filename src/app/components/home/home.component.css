@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #D3D1D1;
+}
+
+header {
+    background: #F2F2F2;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: .2rem solid #8C8C8C;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48,
+}
+
+header .titulo, .img, .nombre{
+    margin: 5px;
+    padding: 5px;
+    width: 410px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+}
+
+header .titulo {
+    width: 610px;
+}
+
+
+header .img {
+    width: 120px;
+}
+
+
+header .img img{
+    width: 105px;
+    height: 105px;
+    border-radius: 15px;
+}
+
+header .img img:hover{
+    border-radius: 20px;
+    transform: scale(1.06);
+}
+
+header .nombre {
+    font-size: 25px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+  
+  .section-tittle {
+    order: 1; /* Controla el orden en el flujo flex */
+    text-align: center;
+  }
+  
+  .ubicate-btn {
+    order: 2; /* Controla el orden en el flujo flex */
+  }
+  
+  /* Ajustes adicionales para la apariencia, margenes, etc. */
+  .section-tittle, .ubicate-btn {
+    padding-top: 40px;
+    margin-bottom: 10px; /* Ajusta según sea necesario */
+  }
+  
+
+.btn {
+    border: none;
+    margin-left: 30px;
+    background: #A67F68;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.4s;
+  }
+
+  .btn:hover {
+    border: #A67F68 solid;
+    background: #fff;
+    color: #A67F68;
+    transform: scale(1.1);
+    cursor: pointer;
+  }

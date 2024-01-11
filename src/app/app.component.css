@@ -1,0 +1,33 @@
+/* styles.css (o el archivo de estilos que estés utilizando en tu proyecto) */
+
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Color de fondo de la página */
+  }
+  
+  /* Estilos para el navbar */
+  .navbar {
+    background-color: #2c3e50; /* Color de fondo del navbar */
+    color: #ecf0f1; /* Color del texto en el navbar */
+    padding: 15px; /* Espaciado interno del navbar */
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para el navbar */
+  }
+  
+  .navbar a {
+    color: #ecf0f1; /* Color del texto de los enlaces en el navbar */
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    margin: 0 15px; /* Márgenes entre enlaces en el navbar */
+    font-size: 16px; /* Tamaño de fuente de los enlaces */
+    transition: color 0.3s ease; /* Efecto de transición para el color del texto */
+  }
+  
+  .navbar a:hover {
+    color: #3498db; /* Cambia el color del texto al pasar el ratón sobre los enlaces */
+  }
+  
+  /* Estilos adicionales según tus necesidades */
+  

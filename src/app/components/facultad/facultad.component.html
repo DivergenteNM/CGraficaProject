@@ -1,0 +1,185 @@
+<div class="body">
+    <section class="selection-program">
+
+        <div class="col-2 content-select">
+            @if (programas.length > 0) {
+            <select (change)="onChange($event)">
+                <option selected disabled>Seleccione programa</option>
+                @for (programa of programas; track programa.id) {
+                <option [value]="programa.id"> {{programa.nombre }}</option>
+                }
+            </select>
+            }
+            <i></i>
+        </div>
+
+        <div class="col-2 content-select" >
+            <select id="estudiantes" (change)="onChange1($event)">
+                <option selected disabled>Seleccione estudiante</option>
+                @for (estudiante of estudiantesSeleccionados; track estudiante.id) {
+                <option [value]="estudiante.id">{{estudiante.nombre}}</option>
+                }
+            </select>
+            <i></i>
+        </div>
+
+    </section>
+
+    <header *ngFor="let estudiante of estudiantesSeleccionados">
+        @if (estudiante.id==estudianteTest) {
+        <div class="resultados-tittle">
+            <h3>Resultados</h3>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Detalles del Programa</h4>
+                    <p><strong>ID del programa:</strong></p>
+                    <p>{{ programaId }}</p>
+                    <p><strong>Nombre del programa:</strong></p>
+                    @if(estudiante.id.substring(0, 2)== "52") {
+                    <p> Ingeniería de Sistemas </p>
+                    }@if(estudiante.id.substring(0, 2)== "53") {
+                    <p> Ingeniería Civil </p>
+                    }@if(estudiante.id.substring(0, 2)== "54") {
+                    <p> Ingeniería Electronica </p>
+                    }
+                </div>
+                <div class="col-md-6">
+                    <h4>Detalles del Estudiante</h4>
+                    <p><strong>ID del estudiante:</strong></p>
+                    <p>{{estudiante.id}}</p>
+                    <p><strong>Nombre del estudiante:</strong></p>
+                    <p>{{estudiante.nombre}}</p>
+                </div>
+            </div>
+        </div>
+        }
+    </header>
+    <section *ngFor="let estudiante of estudiantesSeleccionados">
+        @if (estudiante.id==estudianteTest) {
+
+        <div class="diagonal-container">
+            <div class="content">
+                <!-- Contenido dentro del cuadrado diagonal -->
+                <p>Contenido aquí</p>
+            </div>
+        </div>
+
+        <div class="container mt-5 resultados-section">
+            <div class="tittle">
+                <h2>Resultados de Competencia</h2>
+            </div>
+            <div class="row mt-4" style="margin-bottom: 20px;">
+                <div class="col-md-2">
+                    <h5>Competencia</h5>
+                </div>
+                <div class="col-md-2">
+                    <h5>Saber Pro</h5>
+                </div>
+                <div class="col-md-2">
+                    <h5>%Saber Pro</h5>
+                </div>
+                <div class="col-md-2">
+                    <h5>Saber 11</h5>
+                </div>
+                <div class="col-md-2">
+                    <h5>%Saber 11</h5>
+                </div>
+                <div class="col-md-2">
+                    <h5>%Variación</h5>
+                </div>
+            </div>
+
+            <!-- Fila 1: Lectura Critica -->
+            <div class="row mt-2">
+                <div class="col-md-2">
+                    <p>Lectura Crítica</p>
+                </div>
+                <div class="col-md-2">
+                    <p>{{ estudiante.saberPro.lecturaCritica }}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>({{ estudiante.saberPro.lecturaCritica }}/80)</p>
+                </div>
+                <div class="col-md-2">
+                    <p>{{ estudiante.saberPro.lecturaCritica+11 }}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>({{ estudiante.saberPro.lecturaCritica+11 }}/100)</p>
+                </div>
+                <div class="col-md-2">
+                    <p>7%</p>
+                </div>
+            </div>
+
+            <!-- Fila 2: Razonamiento cuantitativo -->
+            <div class="row mt-2">
+                <div class="col-md-2">
+                    <p>Razonamiento Cuantitativo</p>
+                </div>
+                <div class="col-md-2">
+                    <p>{{ estudiante.saberPro.razonamiento }}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>({{ estudiante.saberPro.razonamiento }}/80)</p>
+                </div>
+                <div class="col-md-2">
+                    <p>{{ estudiante.saberPro.razonamiento+11 }}</p>
+                </div>
+                <div class="col-md-2">
+                    <p> ({{ estudiante.saberPro.razonamiento+11 }}/100)</p>
+                </div>
+                <div class="col-md-2">
+                    <p>7%</p>
+                </div>
+            </div>
+
+            <!-- Fila 3: Inglés -->
+            <div class="row mt-2">
+                <div class="col-md-2">
+                    <p>Inglés</p>
+                </div>
+                <div class="col-md-2">
+                    <p>{{ estudiante.saberPro.ingles }}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>({{ estudiante.saberPro.ingles }}/80)</p>
+                </div>
+                <div class="col-md-2">
+                    <p>{{ estudiante.saberPro.ingles+11 }}</p>
+                </div>
+                <div class="col-md-2">
+                    <p> ({{ estudiante.saberPro.ingles+11 }}/100)</p>
+                </div>
+                <div class="col-md-2">
+                    <p>7%</p>
+                </div>
+            </div>
+
+            <!-- Fila 4: Competencias ciudadanas -->
+            <div class="row mt-2">
+                <div class="col-md-2">
+                    <p>Competencias Ciudadanas</p>
+                </div>
+                <div class="col-md-2">
+                    <p>{{ estudiante.saberPro.ciudadanas }}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>({{ estudiante.saberPro.ciudadanas }}/80)</p>
+                </div>
+                <div class="col-md-2">
+                    <p>{{ estudiante.saberPro.ciudadanas+11 }}</p>
+                </div>
+                <div class="col-md-2">
+                    <p> ({{ estudiante.saberPro.ciudadanas+11 }}/100)</p>
+                </div>
+                <div class="col-md-2">
+                    <p>7%</p>
+                </div>
+            </div>
+        </div>
+        }
+
+    </section>
+</div>

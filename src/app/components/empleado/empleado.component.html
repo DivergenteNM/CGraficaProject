@@ -1,0 +1,84 @@
+<p>Nombre del empleado: {{nombre}}</p>
+
+<p>Apellido del empleado: {{apellido}}</p>
+
+<p>Edad del empleado: {{edad<18 ? "Menor de edad" : "Mayor de edad" }} </p>
+
+        <!-- <p>Empresa del empleado: {{empresa.value}}</p>
+
+ Introduce la empresa: <input type="text" #empresa (keyup)="0" [disabled]="habilitacioncuadrado"> 
+-->
+        <br>
+        <br>
+        {{textoDeRegistro}}
+        <br>
+
+        Registrado: <input type="radio" value="si" name="nRegistro" id="Registro" [checked]="usuRegistrado"
+            (click)="setUsuarioRegistrado($event)">
+        <br>
+        No Registrado: <input type="radio" value="no" name="nRegistro" (click)="setUsuarioRegistrado($event)">
+
+        {{getRegitroUsuario()}}
+
+        <p>Empresa del empleado: {{empresa}}</p>
+        introduce la empresa: <input type="text" [(ngModel)]="empresa">
+
+        <br>
+        <select name="test1" id="" (change)="setTest1($event)">
+            <option value="1" name="test2">asd</option>
+            <option value="2" name="test2">asd2</option>
+        </select>
+
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+
+        <div class="container">
+            <div class="col">
+                <h2 style="text-align: center;">{{titulo}}</h2>
+                <br>
+                <form action="" class="form-group row">
+                    <div class="form-group col-md-3">
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" name="nombre" id="nombre" placeholder="nombree" class="form-control" [(ngModel)]="cuadroNombre">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="apellido">Apellido: </label>
+                        <input type="text" name="apellido" id="apellido" placeholder="apellidoo" class="form-control" [(ngModel)]="cuadroApellido">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="cargo">cargo: </label>
+                        <input type="text" name="cargo" id="cargo" placeholder="cargoo" class="form-control" [(ngModel)]="cuadroCargo">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="salario">salario: </label>
+                        <input type="number" name="salario" id="salario" placeholder="salarioo" class="form-control" [(ngModel)]="cuadroSalario">
+                    </div>
+
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary" (click)="agregarEmpleado()" style="margin-top: 20px;"> Agregar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <br> <br> <br>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div *ngFor="let empleado of empleados; let i=index">
+
+                        {{i+1}} {{empleado.nombre}} {{empleado.apellido}} {{empleado.cargo}} {{empleado.salario}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
