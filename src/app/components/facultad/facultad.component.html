@@ -1,5 +1,9 @@
-<div class="body">
-    <section class="selection-program">
+<div class="body ">
+
+    <div>
+        <h4 class="tittle-1">Seleccione el estudiante:</h4>
+    </div>
+    <section class="selection-program slide-in-top">
 
         <div class="col-2 content-select">
             @if (programas.length > 0) {
@@ -56,15 +60,9 @@
         </div>
         }
     </header>
-    <section *ngFor="let estudiante of estudiantesSeleccionados">
+    <section class="resultados-container1 slide-in-top" *ngFor="let estudiante of estudiantesSeleccionados">
         @if (estudiante.id==estudianteTest) {
 
-        <div class="diagonal-container">
-            <div class="content">
-                <!-- Contenido dentro del cuadrado diagonal -->
-                <p>Contenido aquí</p>
-            </div>
-        </div>
 
         <div class="container mt-5 resultados-section">
             <div class="tittle">

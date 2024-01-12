@@ -18,7 +18,7 @@ export class FacultadComponent {
 programaSeleccionado: Programa = {id:"",nombre:"", estudiantes:[]};
   programaId: string = "";
   estudianteId: string = "";
-  estudianteTest: string = "0000";
+  estudianteTest: string = "0000"; // Una variable para que se compare con ella misma y pueda aparecer la tabla de resultados solo cuando este completo la seleccion de programa y estudiante, de lo contrario aparecera así no este lleno todo.
   estudianteSeleccionado: Estudiante = { id: "", nombre: "", saberPro: { lecturaCritica: 0, ingles: 0, ciudadanas: 0, razonamiento: 0, comunicacionEscrita: 0 } };
   saberPro: SaberPro = { lecturaCritica: 0, ingles: 0, ciudadanas: 0, razonamiento: 0, comunicacionEscrita: 0 };
 
@@ -42,4 +42,6 @@ programaSeleccionado: Programa = {id:"",nombre:"", estudiantes:[]};
       }
     }
   }
+
+
 }
